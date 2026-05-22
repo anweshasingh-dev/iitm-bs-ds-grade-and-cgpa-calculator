@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="IITM BS GPA Calculator", layout="wide")
 st.title("📊 IITM BS CGPA & Grade Calculator")
 
-# --- CUSTOM CSS FOR BETTER UI Hierarchy ---
+# ---  CSS  ---
 st.markdown("""
     <style>
     .stTabs [data-baseweb="tab"] p {
