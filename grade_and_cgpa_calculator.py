@@ -2,7 +2,7 @@ import streamlit as st
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="IITM BS GPA Calculator", layout="wide")
-st.title("📊 IITM BS GPA & Grade Calculator")
+st.title("📊 IITM BS CGPA & Grade Calculator")
 
 # --- CUSTOM CSS FOR BETTER UI Hierarchy ---
 st.markdown("""
@@ -62,7 +62,7 @@ def get_letter_grade(t_score):
 if "term_grades" not in st.session_state:
     st.session_state.term_grades = {}
 
-# --- STEP 1 & 2: CONFIGURATION ---
+# --- CONFIGURATION ---
 st.header("Step 1: Term Configuration")
 col1, col2 = st.columns(2)
 
@@ -75,7 +75,7 @@ with col2:
 
 st.markdown("---")
 
-# --- STEP 3: SUBJECT SELECTION ---
+# --- SUBJECT SELECTION ---
 st.header("Step 2: Select Your Subjects")
 chosen_subjects = []
 
@@ -91,7 +91,7 @@ for i in range(num_subjects):
 
 st.markdown("---")
 
-# --- STEP 4: MARKS FILLING DASHBOARD ---
+# --- MARKS FILLING DASHBOARD ---
 st.header("Step 3: Score Entry Dashboard")
 
 if chosen_subjects:
@@ -99,7 +99,7 @@ if chosen_subjects:
     
     for idx, subject in enumerate(chosen_subjects):
         with tabs[idx]:
-            st.subheader(f"📊 Assessment Scores for {subject}")
+            st.subheader(f"Assessment Scores for {subject}")
             t_score = 0.0
             
             # ==========================================
@@ -467,8 +467,8 @@ if chosen_subjects:
 
 # --- FEATURE 2: OVERALL CUMULATIVE CGPA CALCULATOR ---
 st.markdown("---")
-st.header("🏆 Lifetime Cumulative CGPA Integrator")
-st.markdown("Incorporate your legacy terms into the equation to observe your true dynamic platform standing.")
+st.header("🏆 Lifetime CGPA Tracker")
+st.markdown("*Add your past terms data to see how your are actually performing right now.*")
 
 col_prev_gpa, col_prev_credits = st.columns(2)
 with col_prev_gpa:
@@ -477,7 +477,7 @@ with col_prev_credits:
     prev_credits = st.number_input("Total credits earned/cleared prior to this term:", min_value=0, max_value=120, value=0, step=4)
 
 # Summary calculation trigger
-if st.button("🚀 Calculate Overall & Term Metrics"):
+if st.button("🚀 Calculate Term & Total GPA"):
     if not st.session_state.term_grades:
         st.warning("Please click 'Calculate Grade' inside your subject tabs before analyzing total term distributions.")
     else:
