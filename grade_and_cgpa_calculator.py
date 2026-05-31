@@ -467,7 +467,7 @@ if chosen_subjects:
 
 # --- OVERALL CUMULATIVE CGPA CALCULATOR ---
 st.markdown("---")
-st.header("🏆 Lifetime CGPA Tracker")
+st.header("Lifetime CGPA Tracker")
 st.markdown("*Add your past terms data to see how your are actually performing right now.*")
 
 col_prev_gpa, col_prev_credits = st.columns(2)
