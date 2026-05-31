@@ -19,10 +19,10 @@ The core architecture of the application relies on a linear, top-to-bottom depen
 [Level Selection] ➔ [Subject Selection] ➔ [Grade Calculation] ➔ [CGPA Calculation]
 
 
-### [PHASE 1: Pre-Preparation]
+### PHASE 1: Pre-Preparation
 * **Static Data Loading:** Pre-configured the application with official IITM grading formulas and credit allocations for every single subject across all tiers.
 
-### [PHASE 2: The 4-STAGE State Pipeline]
+### PHASE 2: The 4-STAGE State Pipeline
 * **STAGE 1: Level Selection**
   * *Input:* User selects their current academic tier (Foundation / Diploma / Degree).
   * *Output:* Filters the database and unlocks the corresponding subject pool.
@@ -38,7 +38,7 @@ The core architecture of the application relies on a linear, top-to-bottom depen
   * *Logic:* Computes total weighted points against cumulative registered credits.
   * *Output:* Displays a clean dashboard showing both the **Current Term GPA** and **Integrated Lifetime CGPA**.
 
-### [PHASE 3: State & Data Architecture]
+### PHASE 3: State & Data Architecture
 * **Centralized State Management:** Streamlit naturally reruns scripts on user interaction. To prevent data from wiping out, I implemented a centralized session state to ensure scores entered in Stage 3 accurately flow into Stage 4 without getting lost during UI updates.
 
 ---
