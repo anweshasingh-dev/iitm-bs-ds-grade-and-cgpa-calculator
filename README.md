@@ -1,4 +1,3 @@
-Markdown
 # IITM BS Grade & CGPA Calculator
 
 ## Project Overview
