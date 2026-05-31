@@ -2,7 +2,7 @@ import streamlit as st
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="IITM BS GPA Calculator", layout="wide")
-st.title("📊 IITM BS CGPA & Grade Calculator")
+st.title("IITM BS CGPA & Grade Calculator")
 
 # ---  CSS  ---
 st.markdown("""
@@ -474,7 +474,7 @@ col_prev_gpa, col_prev_credits = st.columns(2)
 with col_prev_gpa:
     prev_cgpa = st.number_input("Your Cumulative CGPA prior to this term:", min_value=0.0, max_value=10.0, value=0.0, step=0.01)
 with col_prev_credits:
-    prev_credits = st.number_input("Total credits earned/cleared prior to this term:", min_value=0, max_value=120, value=0, step=4)
+    prev_credits = st.number_input("Total credits earned prior to this term:", min_value=0, max_value=120, value=0, step=4)
 
 # Summary calculation trigger
 if st.button("🚀 Calculate Term & Total GPA"):
