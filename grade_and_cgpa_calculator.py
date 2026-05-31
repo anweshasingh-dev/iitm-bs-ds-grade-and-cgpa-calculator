@@ -443,7 +443,7 @@ if chosen_subjects:
             earned_credits = subject_credits if is_passed else 0
             
             # 1. Clicking the button saves the LATEST entered scores into Session State
-            if st.button(f"🔍 Calculate Grade for {subject}", key=f"calc_btn_{subject}"):
+            if st.button(f"✨ Calculate Grade for {subject}", key=f"calc_btn_{subject}"):
                 st.session_state.term_grades[subject] = {
                     "t_score": t_score,
                     "grade": letter, 
@@ -465,7 +465,7 @@ if chosen_subjects:
                     st.error(f"❌ Predicted Grade: **{cached['grade']}** (Course Repeat Required)")
             
 
-# --- FEATURE 2: OVERALL CUMULATIVE CGPA CALCULATOR ---
+# --- OVERALL CUMULATIVE CGPA CALCULATOR ---
 st.markdown("---")
 st.header("🏆 Lifetime CGPA Tracker")
 st.markdown("*Add your past terms data to see how your are actually performing right now.*")
@@ -476,7 +476,7 @@ with col_prev_gpa:
 with col_prev_credits:
     prev_credits = st.number_input("Total credits earned prior to this term:", min_value=0, max_value=120, value=0, step=4)
 
-# Summary calculation trigger
+# Summary calculation
 if st.button("🚀 Calculate Term & Total GPA"):
     if not st.session_state.term_grades:
         st.warning("Please click 'Calculate Grade' inside your subject tabs before analyzing total term distributions.")
@@ -512,7 +512,7 @@ if st.button("🚀 Calculate Term & Total GPA"):
             
             overall_cgpa = round(global_total_points / global_total_credits, 2) if global_total_credits > 0 else 0.0
             
-            # Final Interface Reporting
+            # Final Report
             m1, m2, m3 = st.columns(3)
             with m1:
                 st.metric(label="Calculated Term GPA", value=f"{term_gpa} / 10.0")
